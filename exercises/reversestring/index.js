@@ -27,9 +27,7 @@
 // }
 
 function reverse(str) {
-  return str.split('').reduce((newStr, l) => {
-    return l + newStr
-  }, '')
+  return str.split('').reduce((newStr, l) => l + newStr, '')
 }
 
 module.exports = reverse;
