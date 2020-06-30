@@ -18,12 +18,18 @@
 //   return newStr
 // }
 
+// function reverse(str) {
+//   let newStr = ''
+//   for (let l of str) {
+//     newStr = l + newStr
+//   }
+//   return newStr
+// }
+
 function reverse(str) {
-  let newStr = ''
-  for (let l of str) {
-    newStr = l + newStr
-  }
-  return newStr
+  return str.split('').reduce((newStr, l) => {
+    return l + newStr
+  }, '')
 }
 
 module.exports = reverse;
