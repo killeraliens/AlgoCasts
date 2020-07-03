@@ -22,13 +22,9 @@ function maxChar(str) {
   //     maxKey = key
   //   }
   for (let char in dict) {
-    if (dict[char] > maxCount) {
-      maxCount = dict[char]
-      maxKey = char
-    }
-  return maxKey
+    if (dict[char] > maxCount) maxCount = dict[char], maxKey = char
   }
-
+  return maxKey
 }
 maxChar('abcddd11')
 module.exports = maxChar;
