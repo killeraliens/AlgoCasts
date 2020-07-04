@@ -18,19 +18,27 @@
 //   return result
 // }
 
-function chunk(array, size) {
-  let results = []
-  for (let el of array) {
-    const last = results[results.length - 1]
-    if (!last || last.length === size) {
-      results.push([el])
-    } else {
-      last.push(el)
-    }
+// function chunk(array, size) {
+//   let results = []
+//   for (let el of array) {
+//     const last = results[results.length - 1]
+//     if (!last || last.length === size) {
+//       results.push([el])
+//     } else {
+//       last.push(el)
+//     }
+//   }
+//   return results
+// }
 
+function chunk(array, size) {
+  const results = []
+  for (let i = 0; i < array.length; i++) {
+    const newArr = array.slice(i * size, i * size + size)
+    if (newArr.length > 0) results.push(newArr)
   }
   return results
 }
 
-//chunk([8, 9, 3, 4, 5], 2)
+chunk([8, 9, 3, 4, 5], 3)
 module.exports = chunk;
