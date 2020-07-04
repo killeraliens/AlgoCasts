@@ -31,14 +31,25 @@
 //   return results
 // }
 
+// function chunk(array, size) {
+//   const results = []
+//   for (let i = 0; i < array.length; i++) {
+//     const newArr = array.slice(i * size, i * size + size)
+//     if (newArr.length > 0) results.push(newArr)
+//   }
+//   return results
+// }
+
 function chunk(array, size) {
   const results = []
-  for (let i = 0; i < array.length; i++) {
-    const newArr = array.slice(i * size, i * size + size)
-    if (newArr.length > 0) results.push(newArr)
+  let i = 0
+  while (i < array.length) {
+    const newArr = array.slice(i , i + size)
+    results.push(newArr)
+    i += size
   }
   return results
 }
 
-chunk([8, 9, 3, 4, 5], 3)
+// chunk([8, 9, 3, 4, 5], 3)
 module.exports = chunk;
